@@ -11,11 +11,20 @@ console.log(btnAdd) // OK
 // })
 
 // 3. ajouter une div au clic :
-btnAdd.addEventListener('click', () => {
-    let createBtn = document.createElement('button');
-    console.log(createBtn);
-})
+// btnAdd.addEventListener('click', () => {
+//     let createBtn = document.createElement('button');
+//     console.log(createBtn);
+// })
 // Le bouton se créé dans ma console et PAS dans mon html
+
+// 4. faire apparaître le bouton dans le html
+btnAdd.addEventListener('click', () => {
+    let createLi = document.createElement('li');
+    let container = document.getElementById("container")
+    container.appendChild(createLi)
+    console.log(createLi);
+})
+// Ça marche dans le html et dans la console
 
 // 1 créer une fonction qui ajoute une ligne "li" et la stocke
 const createTask = () => {}
