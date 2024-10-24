@@ -5,10 +5,17 @@ const btnAdd = document.querySelector('button')
 console.log(btnAdd) // OK
 
 // 2. ajouter un évènement sur le bouton :
+// btnAdd.addEventListener('click', () => {
+//     alert("Ça marche !");
+//     console.log("Ça marche ici aussi");
+// })
+
+// 3. ajouter une div au clic :
 btnAdd.addEventListener('click', () => {
-    alert("Ça marche !");
-    console.log("Ça marche ici aussi");
+    let createBtn = document.createElement('button');
+    console.log(createBtn);
 })
+// Le bouton se créé dans ma console et PAS dans mon html
 
 // 1 créer une fonction qui ajoute une ligne "li" et la stocke
 const createTask = () => {}
