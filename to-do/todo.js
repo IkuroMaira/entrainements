@@ -61,6 +61,11 @@ btnAdd.addEventListener('click', () => {
     let getUl = document.querySelector('ul');
 
     getContainer.appendChild(getUl).appendChild(createLi).innerText = inputValue;
+    // Effacer le texte du champ input
+    // 9. vider l'input après avoir cliqué sur "ajouter
+    document.getElementById('input_task').value = '';
 
     console.log("console.log : ",createLi);
 })
+
+// 10. mettre une condition pour éviter d'envoyer une tâche vide
