@@ -18,13 +18,21 @@ console.log(btnAdd) // OK
 // Le bouton se créé dans ma console et PAS dans mon html
 
 // 4. faire apparaître le bouton dans le html
+// btnAdd.addEventListener('click', () => {
+//     let createLi = document.createElement('li');
+//     let container = document.getElementById("container")
+//     container.appendChild(createLi)
+//     console.log(createLi);
+// })
+// Ça marche dans le html et dans la console
+
+// 5. ajouter du texte dans li :
 btnAdd.addEventListener('click', () => {
     let createLi = document.createElement('li');
-    let container = document.getElementById("container")
-    container.appendChild(createLi)
-    console.log(createLi);
+    let container = document.getElementById("container");
+    container.appendChild(createLi).innerText = "Tâche 1";
+    console.log("console.log : ",createLi);
 })
-// Ça marche dans le html et dans la console
 
 // 1 créer une fonction qui ajoute une ligne "li" et la stocke
 const createTask = () => {}
