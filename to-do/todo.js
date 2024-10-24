@@ -27,27 +27,40 @@ console.log(btnAdd) // OK
 // Ça marche dans le html et dans la console
 
 // 5. ajouter du texte dans li :
+// btnAdd.addEventListener('click', () => {
+//     let createLi = document.createElement('li');
+//     let getContainer = document.getElementById("container");
+//     let getUl = document.querySelector('ul')
+//
+//     getContainer.appendChild(getUl).appendChild(createLi).innerText = "Tâche 1";
+//
+//     console.log("console.log : ",createLi);
+// })
+
+// 6. récupérer un input :
+// let getInput = document.getElementById("input_task");
+// console.log("J'ai récupéré ", getInput);
+
+// 7. récupérer la valeur d'un input : ... avec un évènement
+// btnAdd.addEventListener('click', () => {
+//     let inputValue = getInput.value;
+//     console.log("La valeur de l'input est ", inputValue);
+// })
+
+// 8. fusionner le 7, le 6 et le 5 ... ajouter un texte venant d'un input
 btnAdd.addEventListener('click', () => {
+
+    let getInput = document.getElementById("input_task");
+    console.log("J'ai récupéré ", getInput);
+
+    let inputValue = getInput.value;
+    console.log("La valeur de l'input est ", inputValue);
+
     let createLi = document.createElement('li');
     let getContainer = document.getElementById("container");
-    let getUl = document.querySelector('ul')
+    let getUl = document.querySelector('ul');
 
-    getContainer.appendChild(getUl).appendChild(createLi).innerText = "Tâche 1";
+    getContainer.appendChild(getUl).appendChild(createLi).innerText = inputValue;
 
     console.log("console.log : ",createLi);
 })
-
-// 6. récupérer un input :
-let getInput = document.getElementById("input_task");
-console.log("J'ai récupéré ", getInput);
-
-// 7. récupérer la valeur d'un input : ... avec un évènement
-btnAdd.addEventListener('click', () => {
-    let inputValue = getInput.value;
-    console.log("La valeur de l'input est ", inputValue);
-})
-
-// ajouter un texte venant d'un imput :
-
-// 1 créer une fonction qui ajoute une ligne "li" et la stocke
-const createTask = () => {}
