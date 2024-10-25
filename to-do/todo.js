@@ -48,7 +48,32 @@ console.log(btnAdd) // OK
 // })
 
 // 8. fusionner le 7, le 6 et le 5 ... ajouter un texte venant d'un input
+// btnAdd.addEventListener('click', () => {
+//
+//     let getInput = document.getElementById("input_task");
+//     console.log("J'ai récupéré ", getInput);
+//
+//     let inputValue = getInput.value;
+//     console.log("La valeur de l'input est ", inputValue);
+//
+//     let createLi = document.createElement('li');
+//     let getContainer = document.getElementById("container");
+//     let getUl = document.querySelector('ul');
+//
+//     getContainer.appendChild(getUl).appendChild(createLi).innerText = inputValue;
+//     // Effacer le texte du champ input
+//     // 9. vider l'input après avoir cliqué sur "ajouter"
+//     document.getElementById('input_task').value = '';
+//
+//     console.log("console.log : ",createLi);
+// })
+
+// 10. mettre une condition pour éviter d'envoyer une tâche vide
 btnAdd.addEventListener('click', () => {
+
+    if (document.getElementById('input_task').value === '') {
+        getBtn.disabled = true;
+    }
 
     let getInput = document.getElementById("input_task");
     console.log("J'ai récupéré ", getInput);
@@ -62,10 +87,8 @@ btnAdd.addEventListener('click', () => {
 
     getContainer.appendChild(getUl).appendChild(createLi).innerText = inputValue;
     // Effacer le texte du champ input
-    // 9. vider l'input après avoir cliqué sur "ajouter
+    // 9. vider l'input après avoir cliqué sur "ajouter"
     document.getElementById('input_task').value = '';
 
     console.log("console.log : ",createLi);
 })
-
-// 10. mettre une condition pour éviter d'envoyer une tâche vide
