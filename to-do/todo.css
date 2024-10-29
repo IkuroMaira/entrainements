@@ -1,0 +1,85 @@
+/* Réinitialiser les marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Styles généraux pour le corps de la page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+}
+
+/* Conteneur principal de la to-do list */
+#container {
+    width: 300px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Label et input */
+label {
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Bouton d'ajout */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Liste des tâches */
+ul {
+    list-style-type: none;
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+li {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+}
+
+/* Style des éléments de liste pour pouvoir ajouter des icônes de suppression si nécessaire */
+li::before {
+    content: '• ';
+    font-weight: bold;
+    color: #4caf50;
+    margin-right: 5px;
+}
