@@ -41,4 +41,3 @@ for (const button of buttons) {
         console.log("Coucou");
     })
 }
-
