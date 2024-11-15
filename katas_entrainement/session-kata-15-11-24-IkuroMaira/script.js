@@ -56,61 +56,66 @@ const morseToLatin = {
     '....': "H"
 }
 
-function getLatinCharacterList([characters]) {
-    // console.log('Dans la variable charactersList', characters);
+function getLatinCharacterList([latinCharacters]) {
 
-    return characters.split('');
+    console.log(latinCharacters);
+    return latinCharacters.split('');
 }
 
-function translateLatinCharacter(returnedLetter) {
+function translateLatinCharacter(returnedLetters) {
+    console.log('returnedLetter', returnedLetters);
 
-    // OLD VERSION
-    // for (const [latinLetter, morse] of Object.entries(latinToMorse)) {
-    //
-    //     for (const letter of returnedLetter) {
-    //         // console.log(letter);
-    //
-    //         if (latinLetter === letter) {
-    //             console.log(`${latinLetter} = ${morse}`);
-    //
-    //             // return morse;
-    //         } else {
-    //             // console.log('C\'est peut-être un espace');
-    //         }
-    //     }
-    // }
+    // Créer un tableau pour stocker les caractères morse
+    let morseResult = [];
 
-    for (const letter of returnedLetter) {
-
-        for (const [latinLetter, morse] of Object.entries(latinToMorse)) {
-
-            if (latinLetter === letter) {
-                console.log(`${latinLetter} = ${morse}`);
-                // continue;
-            } else {
-                // console.log('C\'est peut-être un espace');
-            }
+    for (const letter of returnedLetters) {
+        if (letter === ' ') {
+            morseResult.push('/');  // Ajouter un slash pour les espaces
+        } else if (latinToMorse[letter]) { // est vraie
+            morseResult.push(latinToMorse[letter]);  // Ajouter le code morse
         }
     }
+
+    return morseResult.join(' ');
 }
 
-function encode(words) {
+function encode(latinWords) {
+    console.log('latinWords :', latinWords);
     // Mettre en majuscule
-    let capitalLetter = [words.toUpperCase()];
-    console.log(capitalLetter);
+    let capitalLetter = [latinWords.toUpperCase()];
+    console.log('Mis en lettre capitale: ', capitalLetter);
 
     // transformer en liste dans un tableau
     let charactersList = getLatinCharacterList(capitalLetter);
-    console.log(charactersList);
+    // console.log('Tableau avec les lettres capitales: ', charactersList);
+
 
     // On traduit en morse
     translateLatinCharacter(charactersList);
 }
 
 // STEP 4
-function decode() {
+// On sépare chaque caractère
+function getMorseCharacterList(morseCharacters) {
+    console.log('morseCharacters: ', morseCharacters);
 
 }
 
-let wordsWrite = 'Hello world';
+function translateMorseCharacter(returnedMorse) {
+
+}
+
+function decode(morseWords) {
+    let morseList = getMorseCharacterList(morseWords);
+    console.log('Liste morse: ', morseList);
+
+    // On traduit en caractère latin
+    translateMorseCharacter(morseList);
+}
+
+let wordsWrite = 'Hello world !';
 encode(wordsWrite);
+
+let morseWrite = '.- -... / -... .-'; // AB BA
+getMorseCharacterList(morseWrite);
+// decode(morseWrite);
