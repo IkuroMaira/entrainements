@@ -1,0 +1,1 @@
+console.log('On inspecte le pop-up !');

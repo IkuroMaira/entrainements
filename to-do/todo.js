@@ -92,3 +92,5 @@ btnAdd.addEventListener('click', () => {
 
     console.log("console.log : ",createLi);
 })
+
+// 11. Ajouter des fonctions pour mieux gérer le code
