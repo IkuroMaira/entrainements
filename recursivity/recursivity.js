@@ -1,3 +1,4 @@
+// EXO 1 :
 function boucleRecursivity(i) {
     if (i === 4) {
         return;
@@ -9,6 +10,7 @@ function boucleRecursivity(i) {
 
 boucleRecursivity(1);
 
+// EXO 2 :
 const couleurs = ["rouge", "vert", "jaune", "vert"];
 
 function boucleIterativeArr(i, array) {
@@ -23,6 +25,7 @@ function boucleIterativeArr(i, array) {
 
 boucleIterativeArr(0, couleurs);
 
+// EXO 3 :
 const familyTree = {
     icon: "👵",
     children: [
