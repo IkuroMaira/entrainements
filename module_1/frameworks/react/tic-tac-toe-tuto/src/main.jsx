@@ -4,7 +4,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // La bibliothèque React qui parle aux navigateurs web (React DOM)
 import './index.css'
-// Les styles de vos composants
+// Les styles de vos components
 import App from './App.jsx'
 // Le composant que vous avez créé dans App.js
 
