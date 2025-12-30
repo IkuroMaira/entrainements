@@ -118,7 +118,7 @@ puts a || b   # true  (OU logique)
 puts !a       # false (NON logique)
 ### Formes alternatives
 puts a and b  # false (priorité plus faible)
-puts a or b   # true  (priorité plus faible)
+puts a or b   # true (priorité plus faible)
 puts not a    # false
 ## Opérateurs d'affectation
 x = 10
@@ -143,3 +143,76 @@ puts nom  # "Anonyme" (pas changé)
 ### Safe navigation operator (&.)
 utilisateur = nil
 puts utilisateur&.nom  # nil (pas d'erreur)
+
+## Structures Conditionnelles
+### if / elsif / else
+age = 20
+if age < 20
+  puts "Mineur"
+elsif age < 65
+  puts "Adulte"
+else
+  puts "Senior"
+end # Adulte
+
+### Modificateur if (inline)
+puts "Majeur" if age >= 18 # Majeur
+#### Équivalent à :
+if age >= 18
+  puts "Majeur"
+end
+
+### unless (inverse de if)
+unless temperature < 20
+  puts "Il fait bon"
+end # Il fait bon
+#### Modificateur unless
+puts "Il fait bon" unless temperature < 20
+
+### case/when
+jour = "lundi"
+case jour
+when "lundi"
+  puts "Début de semaine"
+when "mercredi"
+  puts "Milieu de semaine"
+when "vendredi"
+  puts "Fin de semaine"
+when "samedi", "dimanche"
+  puts "Week-end"
+else
+  puts "Jour de la semaine"
+end # Début de la semaine
+
+### case avec ranges
+# note = 15
+resultat = case note
+           when 0..9
+             "Insuffisant"
+           when 10..11
+             "Passable"
+           when 12..13
+             "Assez bien"
+           when 14..15
+             "Bien"
+           when 16..20
+             "Très bien"
+           else
+             "Note invalide"
+           end
+puts resultat # Bien
+
+### case avec types
+valeur = 42
+case valeur
+when Integer
+  puts "C'est un entier"
+when String
+  puts "C'est une chaîne"
+when Array
+  puts "C'est un tableau"
+else
+  puts "Type inconnu"
+end # C'est un entier
+
+### Opérateur ternaire
