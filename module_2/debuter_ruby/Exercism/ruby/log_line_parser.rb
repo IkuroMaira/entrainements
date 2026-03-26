@@ -19,4 +19,3 @@ end
 puts LogLineParser.new("[WARNING]:  Disk almost full\r\n").message
 puts LogLineParser.new("[WARNING]:  Disk almost full\r\n").log_level
 puts LogLineParser.new("[WARNING]:  Disk almost full\r\n").reformat
-
