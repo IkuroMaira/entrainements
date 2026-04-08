@@ -1,0 +1,61 @@
+<%#
+  FORMULAIRE DE CHANGEMENT DE COACH
+  Equivalent de : app/views/action_requireds/_change_coach_form.html.erb dans Simundia
+
+  LOCALS RECUES (passees par show.html.erb) :
+    - current_coach_email : l'email du coach actuel
+    - coaches             : la liste des coaches disponibles
+
+  CE QU'ON FAIT ICI :
+    1. On declare le controller Stimulus "select-coach"
+    2. On rend le carousel en lui passant current_coach_email (cascade !)
+    3. On rend le champ de recherche
+    4. Un seul bouton "Valider" appelle select-coach#validate
+%>
+
+<p>Coach actuel : <strong><%= current_coach_email %></strong></p>
+
+<%# data-controller : dit a Stimulus quel controller JS utiliser %>
+<%# data-select-coach-...-value : passe une "value" Stimulus (comme une prop) %>
+<div data-controller="select-coach"
+     data-select-coach-no-selection-message-value="Veuillez selectionner un coach.">
+
+  <%# Le formulaire pointe vers l'action change_coach %>
+  <%# data-select-coach-target="form" : le controller JS pourra acceder au form %>
+  <form action="/change_coach" method="post"
+        data-select-coach-target="form">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <% if coaches.present? %>
+      <h2>Selectionner un coach dans la liste</h2>
+
+      <%#
+        CASCADE DE LOCALS :
+        On passe current_coach_email au carousel,
+        qui le passera a chaque _coach_card.
+        C'est comme ca que le badge "Coach actuel" sait quoi afficher.
+      %>
+      <%= render "coachings/carousel/carousel",
+                 coaches: coaches,
+                 current_coach_email: current_coach_email %>
+
+      <div style="text-align: center; margin: 20px 0; color: #9ca3af; font-weight: 600;">
+        — OU —
+      </div>
+    <% end %>
+
+    <h2>Rechercher un coach par email</h2>
+    <%= render "coachings/search_field" %>
+
+    <br>
+    <%# data-action : lie le click a la methode validate du controller %>
+    <button type="button"
+            class="btn-validate"
+            data-action="click->select-coach#validate">
+      Valider
+    </button>
+  </form>
+
+  <%# Zone de message (erreur / succes) %>
+  <div data-select-coach-target="messageWrapper" class="message"></div>
+</div>

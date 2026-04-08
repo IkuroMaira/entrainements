@@ -1,0 +1,30 @@
+<%#
+  CHAMP DE RECHERCHE
+  Equivalent de : app/views/relationships/_input_search_coach_change.html.erb dans Simundia
+
+  PAS DE LOCALS : cette partial n'a pas besoin de current_coach_email.
+
+  DEUX INPUTS :
+    1. Le champ visible (emailInput) : l'utilisateur tape dedans
+    2. Le champ hidden (emailHidden) : c'est la valeur envoyee au serveur
+
+  Dans Simundia, le champ visible utilise un autocomplete.
+  Ici on simplifie : on met juste a jour le hidden quand on tape.
+%>
+
+<div class="search-wrapper">
+  <label for="search-coach">Email du nouveau coach :</label>
+  <input type="text"
+         id="search-coach"
+         class="search-input"
+         placeholder="Rechercher par email..."
+         data-select-coach-target="emailInput"
+         data-action="input->select-coach#onEmailChange">
+
+  <%# Hidden field : la valeur reelle envoyee au serveur
+      C'est le MEME champ que le carousel remplit.
+      Un seul hidden "coach_email" pour les deux modes. %>
+  <input type="hidden"
+         name="coach_email"
+         data-select-coach-target="emailHidden">
+</div>

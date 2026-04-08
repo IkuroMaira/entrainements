@@ -1,0 +1,39 @@
+<%#
+  CARTE COACH
+  Equivalent de : app/views/relationships/carousel/_expert_card.html.erb dans Simundia
+
+  LOCALS RECUES (passees par carousel/_carousel.html.erb) :
+    - coach                 : l'objet Coach a afficher
+    - current_coach_email   : l'email du coach actuel (pour le badge)
+
+  DATA ATTRIBUTES sur le div cliquable :
+    - data-action="click->select-coach#selectFromCarousel"
+        → Quand on clique, appelle la methode selectFromCarousel du controller Stimulus
+    - data-coach-email="..."
+        → Le JS lit cette valeur pour savoir quel email ecrire dans le hidden field
+%>
+
+<div class="card-wrapper"
+     data-action="click->select-coach#selectFromCarousel"
+     data-coach-email="<%= coach.email %>">
+  <div class="coach-card">
+    <div class="coach-card__button"></div>
+    <div class="coach-card__img"><%= coach.name.split.map(&:first).join %></div>
+    <div class="coach-card__name"><%= coach.name %></div>
+    <div class="coach-card__specialty"><%= coach.specialty %></div>
+    <div class="coach-card__tags">
+      <%#
+        BADGE "Coach actuel" :
+        On compare l'email de ce coach avec current_coach_email.
+        local_assigns[:current_coach_email] verifie que la variable existe
+        (utile si la partial est reutilisee ailleurs sans ce local).
+
+        C'est exactement le meme pattern que dans Simundia :
+          if local_assigns[:current_expert_email].present? && expert.email == current_expert_email
+      %>
+      <% if local_assigns[:current_coach_email].present? && coach.email == current_coach_email %>
+        <span class="tag tag--current">Coach actuel</span>
+      <% end %>
+    </div>
+  </div>
+</div>

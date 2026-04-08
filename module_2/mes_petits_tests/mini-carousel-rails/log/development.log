@@ -1,0 +1,159 @@
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MiniCarouselRails'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiniCarouselRails'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiniCarouselRails'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-04-08 03:32:05.015964', '2026-04-08 03:32:05.015966') RETURNING "key" /*application='MiniCarouselRails'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiniCarouselRails'*/[0m
+Migrating to CreateCoaches (20260408033159)
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "coaches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "specialty" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiniCarouselRails'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408033159') RETURNING "version" /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiniCarouselRails'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Load (0.2ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."email" = 'marie.dupont@coaching.fr' LIMIT 1 /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Create (0.1ms)[0m  [1m[32mINSERT INTO "coaches" ("name", "email", "specialty", "created_at", "updated_at") VALUES ('Marie Dupont', 'marie.dupont@coaching.fr', 'Leadership', '2026-04-08 03:32:39.687857', '2026-04-08 03:32:39.687857') RETURNING "id" /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."email" = 'pierre.martin@coaching.fr' LIMIT 1 /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Create (3.0ms)[0m  [1m[32mINSERT INTO "coaches" ("name", "email", "specialty", "created_at", "updated_at") VALUES ('Pierre Martin', 'pierre.martin@coaching.fr', 'Communication', '2026-04-08 03:32:39.696976', '2026-04-08 03:32:39.696976') RETURNING "id" /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."email" = 'sophie.bernard@coaching.fr' LIMIT 1 /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Create (1.2ms)[0m  [1m[32mINSERT INTO "coaches" ("name", "email", "specialty", "created_at", "updated_at") VALUES ('Sophie Bernard', 'sophie.bernard@coaching.fr', 'Gestion du stress', '2026-04-08 03:32:39.709196', '2026-04-08 03:32:39.709196') RETURNING "id" /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."email" = 'luc.moreau@coaching.fr' LIMIT 1 /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Create (1.5ms)[0m  [1m[32mINSERT INTO "coaches" ("name", "email", "specialty", "created_at", "updated_at") VALUES ('Luc Moreau', 'luc.moreau@coaching.fr', 'Management', '2026-04-08 03:32:39.715629', '2026-04-08 03:32:39.715629') RETURNING "id" /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."email" = 'claire.petit@coaching.fr' LIMIT 1 /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Create (0.5ms)[0m  [1m[32mINSERT INTO "coaches" ("name", "email", "specialty", "created_at", "updated_at") VALUES ('Claire Petit', 'claire.petit@coaching.fr', 'Prise de parole', '2026-04-08 03:32:39.720299', '2026-04-08 03:32:39.720299') RETURNING "id" /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Load (0.6ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."email" = 'thomas.roux@coaching.fr' LIMIT 1 /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Create (0.7ms)[0m  [1m[32mINSERT INTO "coaches" ("name", "email", "specialty", "created_at", "updated_at") VALUES ('Thomas Roux', 'thomas.roux@coaching.fr', 'Confiance en soi', '2026-04-08 03:32:39.729697', '2026-04-08 03:32:39.729697') RETURNING "id" /*application='MiniCarouselRails'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiniCarouselRails'*/[0m
+  [1m[36mCoach Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "coaches" /*application='MiniCarouselRails'*/[0m
+Started GET "/" for ::1 at 2026-04-08 05:36:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiniCarouselRails'*/[0m
+Processing by CoachingsController#show as */*
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."id" IS NULL LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/controllers/coachings_controller.rb:8:in `show'
+  [1m[36mCoach Load (2.3ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" ASC LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/controllers/coachings_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering coachings/show.html.erb within layouts/application
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/views/coachings/show.html.erb:18
+  [1m[36mCoach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches"[0m
+  ↳ app/views/coachings/_change_coach_form.html.erb:29
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered coachings/carousel/_carousel.html.erb (Duration: 6.0ms | GC: 0.0ms)
+  Rendered coachings/_search_field.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered coachings/_change_coach_form.html.erb (Duration: 9.4ms | GC: 0.1ms)
+  Rendered coachings/show.html.erb within layouts/application (Duration: 20.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | GC: 0.5ms)
+Completed 200 OK in 91ms (Views: 30.5ms | ActiveRecord: 4.1ms (10 queries, 6 cached) | GC: 5.1ms)
+
+
+Started GET "/" for ::1 at 2026-04-08 05:36:44 +0200
+Processing by CoachingsController#show as HTML
+  [1m[36mCoach Load (1.4ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."id" IS NULL LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/controllers/coachings_controller.rb:8:in `show'
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" ASC LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/controllers/coachings_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering coachings/show.html.erb within layouts/application
+  [1m[36mCoach Load (0.5ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/views/coachings/show.html.erb:18
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (2.5ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches"[0m
+  ↳ app/views/coachings/_change_coach_form.html.erb:29
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered coachings/carousel/_carousel.html.erb (Duration: 5.0ms | GC: 0.0ms)
+  Rendered coachings/_search_field.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/_change_coach_form.html.erb (Duration: 6.9ms | GC: 0.0ms)
+  Rendered coachings/show.html.erb within layouts/application (Duration: 41.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | GC: 5.4ms)
+Completed 200 OK in 114ms (Views: 49.5ms | ActiveRecord: 1.4ms (10 queries, 6 cached) | GC: 5.4ms)
+
+
+Started POST "/change_coach" for ::1 at 2026-04-08 05:37:11 +0200
+Processing by CoachingsController#change_coach as JSON
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coach_email"=>"[FILTERED]"}
+  [1m[36mCoach Load (0.5ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."email" = 'pierre.martin@coaching.fr' LIMIT 1 /*action='change_coach',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/controllers/coachings_controller.rb:22:in `change_coach'
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/?current_coach_id=4" for ::1 at 2026-04-08 09:58:21 +0200
+Processing by CoachingsController#show as HTML
+  Parameters: {"current_coach_id"=>"4"}
+  [1m[36mCoach Load (8.4ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" WHERE "coaches"."id" = 4 LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/controllers/coachings_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering coachings/show.html.erb within layouts/application
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/views/coachings/show.html.erb:18
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1 /*action='show',application='MiniCarouselRails',controller='coachings'*/[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.1ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches" ORDER BY "coaches"."id" DESC LIMIT 1[0m
+  ↳ app/views/coachings/show.html.erb:19
+  [1m[36mCACHE Coach Load (0.0ms)[0m  [1m[34mSELECT "coaches".* FROM "coaches"[0m
+  ↳ app/views/coachings/_change_coach_form.html.erb:29
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered coachings/carousel/_coach_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/carousel/_carousel.html.erb (Duration: 3.3ms | GC: 0.7ms)
+  Rendered coachings/_search_field.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered coachings/_change_coach_form.html.erb (Duration: 9.8ms | GC: 2.8ms)
+  Rendered coachings/show.html.erb within layouts/application (Duration: 39.8ms | GC: 16.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.7ms | GC: 17.3ms)
+Completed 200 OK in 87ms (Views: 44.3ms | ActiveRecord: 8.6ms (9 queries, 6 cached) | GC: 27.4ms)
+
+
