@@ -1,0 +1,32 @@
+<%#
+  PAGE PRINCIPALE
+  Equivalent de : app/views/users/action_required_v2.html.erb dans Simundia
+
+  Cette vue passe les variables aux partials via les "locals".
+  C'est le POINT DE DEPART de la cascade :
+    show.html.erb
+      └─ _change_coach_form (current_coach_email, coaches)
+           ├─ carousel/_carousel (current_coach_email)
+           │    └─ carousel/_coach_card (current_coach_email)
+           └─ _search_field
+%>
+
+<h1>Changement de coach</h1>
+
+<p>
+  Essaie avec different coaches actuels :
+  <% Coach.all.each do |coach| %>
+    <a href="/?current_coach_id=<%= coach.id %>"><%= coach.name %></a><%= " | " unless coach == Coach.last %>
+  <% end %>
+</p>
+
+<hr>
+
+<%#
+  RENDER AVEC LOCALS :
+  On passe current_coach_email et coaches en tant que variables locales.
+  Dans la partial, ces variables seront accessibles directement par leur nom.
+%>
+<%= render "coachings/change_coach_form",
+           current_coach_email: @current_coach_email,
+           coaches: @coaches %>

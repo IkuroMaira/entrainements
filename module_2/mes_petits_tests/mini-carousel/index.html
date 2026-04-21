@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Carousel - Entrainement Stimulus</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Stimulus via CDN -->
+  <script type="module">
+    import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+    window.Stimulus = Application.start()
+
+    // On charge notre controller depuis un fichier externe
+    const module = await import("./select_coach_controller.js")
+    Stimulus.register("select-coach", module.default)
+  </script>
+</head>
+<body>
+
+  <h1>Changement de coach</h1>
+  <p>Coach actuel : <strong>marie.dupont@coaching.fr</strong></p>
+
+  <!-- ============================================================
+       Le div racine déclare le controller Stimulus "select-coach"
+       et passe une "value" (message si rien n'est sélectionné)
+       ============================================================ -->
+  <div data-controller="select-coach"
+       data-select-coach-no-selection-message-value="Veuillez sélectionner un coach.">
+
+    <!-- ============================================================
+         SECTION 1 : Le carousel de cartes
+         Chaque carte a :
+         - data-action : appelle selectFromCarousel sur le click
+         - data-coach-email : l'email du coach (passé via data attribute)
+         ============================================================ -->
+    <h2>Sélectionner un coach dans la liste</h2>
+    <div class="carousel">
+
+      <!-- Carte 1 : Coach actuel (avec badge) -->
+      <div class="card-wrapper"
+           data-action="click->select-coach#selectFromCarousel"
+           data-coach-email="marie.dupont@coaching.fr">
+        <div class="coach-card">
+          <div class="coach-card__button"></div>
+          <div class="coach-card__img">MD</div>
+          <div class="coach-card__name">Marie Dupont</div>
+          <div class="coach-card__tags">
+            <!-- Badge "Coach actuel" : affiché car email == coach actuel -->
+            <span class="tag tag--current">Coach actuel</span>
+            <span class="tag tag--top">Top coach</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="card-wrapper"
+           data-action="click->select-coach#selectFromCarousel"
+           data-coach-email="pierre.martin@coaching.fr">
+        <div class="coach-card">
+          <div class="coach-card__button"></div>
+          <div class="coach-card__img">PM</div>
+          <div class="coach-card__name">Pierre Martin</div>
+          <div class="coach-card__tags">
+            <span class="tag tag--top">Top coach</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="card-wrapper"
+           data-action="click->select-coach#selectFromCarousel"
+           data-coach-email="sophie.bernard@coaching.fr">
+        <div class="coach-card">
+          <div class="coach-card__button"></div>
+          <div class="coach-card__img">SB</div>
+          <div class="coach-card__name">Sophie Bernard</div>
+          <div class="coach-card__tags">
+            <span class="tag tag--ai">AI Notetaker</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Séparateur -->
+    <div class="separator">— OU —</div>
+
+    <!-- ============================================================
+         SECTION 2 : Recherche par email
+         - emailInput : le champ visible (target Stimulus)
+         - emailHidden : le champ hidden qui sera envoyé au serveur
+         - data-action : appelle onEmailChange quand on tape
+         ============================================================ -->
+    <h2>Rechercher un coach par email</h2>
+    <div class="search-wrapper">
+      <input type="text"
+             class="search-input"
+             placeholder="Rechercher par email..."
+             data-select-coach-target="emailInput"
+             data-action="input->select-coach#onEmailChange">
+
+      <!-- Hidden field : c'est LUI qui contient la valeur envoyée au serveur
+           Les deux modes (carousel + recherche) écrivent dans ce même champ -->
+      <input type="hidden"
+             name="coach_email"
+             data-select-coach-target="emailHidden">
+    </div>
+
+    <!-- Zone de message (erreur / succès) -->
+    <div class="message" data-select-coach-target="messageWrapper"></div>
+
+    <!-- Bouton de validation -->
+    <button class="btn-validate" data-action="click->select-coach#validate">
+      Valider
+    </button>
+
+    <!-- ============================================================
+         Zone de debug : montre la valeur du hidden en temps réel
+         ============================================================ -->
+    <div class="debug">
+      <strong>Debug</strong> — Valeur de coach_email (hidden) :
+      <code data-select-coach-target="debugDisplay">vide</code>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+/* ============================================================
+   STYLES GENERAUX
+   ============================================================ */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+h1 { color: #1a1a1a; }
+h2 { font-size: 1rem; font-weight: 600; margin-top: 24px; }
+
+/* ============================================================
+   CAROUSEL : conteneur des cartes
+   ============================================================ */
+.carousel {
+  display: flex;
+  gap: 16px;
+}
+
+/* ============================================================
+   CARD WRAPPER : le div cliquable qui contient la carte
+   (c'est lui qui a le data-action)
+   ============================================================ */
+.card-wrapper {
+  flex: 1;
+  cursor: pointer;
+}
+
+/* ============================================================
+   COACH CARD : la carte visuelle
+   - border transparent par defaut
+   - border bleue au hover (via :hover CSS pur)
+   - border noire quand selectionnee (via classe JS)
+   ============================================================ */
+.coach-card {
+  padding: 16px;
+  background: white;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+/* HOVER : CSS pur, pas de JS necessaire */
+.coach-card:hover {
+  border-color: #3b82f6;
+}
+
+/* SELECTED : classe ajoutee/retiree par le controller Stimulus */
+.coach-card--selected {
+  border-color: #1a1a1a !important;
+}
+
+/* ============================================================
+   BOUTON RADIO VISUEL (coin haut-droit de la carte)
+   ============================================================ */
+.coach-card__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  background: white;
+}
+
+/* Quand selectionne : fond noir + check */
+.coach-card__button--checked {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
+.coach-card__button--checked::after {
+  content: "\2713";
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* ============================================================
+   CONTENU DE LA CARTE
+   ============================================================ */
+.coach-card__img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: #e5e7eb;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.coach-card__name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   TAGS / BADGES
+   ============================================================ */
+.coach-card__tags {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Badge "Coach actuel" : fond gris */
+.tag--current {
+  background: #d1d5db;
+}
+
+/* Badge "Top coach" : fond vert */
+.tag--top {
+  background: #d1fae5;
+}
+
+/* Badge "AI Notetaker" : fond vert */
+.tag--ai {
+  background: #d1fae5;
+}
+
+/* ============================================================
+   SEPARATEUR
+   ============================================================ */
+.separator {
+  text-align: center;
+  margin: 24px 0;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+/* ============================================================
+   CHAMP DE RECHERCHE
+   ============================================================ */
+.search-wrapper {
+  margin-bottom: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* ============================================================
+   BOUTON VALIDER
+   ============================================================ */
+.btn-validate {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.btn-validate:hover {
+  background: #333;
+}
+
+/* ============================================================
+   MESSAGES (erreur / succes)
+   ============================================================ */
+.message {
+  min-height: 20px;
+  margin: 12px 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.message--error {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.message--success {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+/* ============================================================
+   ZONE DE DEBUG
+   ============================================================ */
+.debug {
+  margin-top: 32px;
+  padding: 12px;
+  background: #fefce8;
+  border: 1px dashed #ca8a04;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.debug code {
+  background: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+}

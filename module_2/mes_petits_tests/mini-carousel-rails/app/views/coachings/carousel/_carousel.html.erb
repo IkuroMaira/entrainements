@@ -1,0 +1,25 @@
+<%#
+  CAROUSEL
+  Equivalent de : app/views/relationships/carousel/_carousel_user_page.html.erb dans Simundia
+
+  LOCALS RECUES (passees par _change_coach_form.html.erb) :
+    - coaches               : la liste des coaches
+    - current_coach_email   : l'email du coach actuel
+
+  ROLE : affiche les cartes par groupes de 3.
+  Passe current_coach_email a chaque _coach_card (cascade !).
+%>
+
+<div class="carousel">
+  <% coaches.each do |coach| %>
+    <%#
+      RENDER AVEC LOCALS :
+      On passe le coach ET current_coach_email a la carte.
+      C'est dans _coach_card que la comparaison se fait
+      pour afficher (ou pas) le badge "Coach actuel".
+    %>
+    <%= render "coachings/carousel/coach_card",
+               coach: coach,
+               current_coach_email: current_coach_email %>
+  <% end %>
+</div>
