@@ -1,0 +1,14 @@
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/bin/Debug/net10.0/ExercismCSharp
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/bin/Debug/net10.0/ExercismCSharp.deps.json
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/bin/Debug/net10.0/ExercismCSharp.runtimeconfig.json
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/bin/Debug/net10.0/ExercismCSharp.dll
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/bin/Debug/net10.0/ExercismCSharp.pdb
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ExercismCSharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ExercismCSharp.AssemblyInfoInputs.cache
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ExercismCSharp.AssemblyInfo.cs
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ExercismCSharp.csproj.CoreCompileInputs.cache
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ExercismCSharp.dll
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/refint/ExercismCSharp.dll
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ExercismCSharp.pdb
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ExercismCSharp.genruntimeconfig.cache
+/Users/gwenaellebussac/01-ENTRAINEMENTS-dev/entrainements/module_2/apprendre_c#/ExercismCSharp/obj/Debug/net10.0/ref/ExercismCSharp.dll
