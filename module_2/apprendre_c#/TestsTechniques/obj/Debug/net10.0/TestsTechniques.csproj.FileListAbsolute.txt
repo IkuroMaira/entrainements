@@ -1,0 +1,4 @@
+/Users/gwenaellebussac/Apprentissage/ADA/entrainements/module_2/apprendre_c#/TestsTechniques/obj/Debug/net10.0/TestsTechniques.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gwenaellebussac/Apprentissage/ADA/entrainements/module_2/apprendre_c#/TestsTechniques/obj/Debug/net10.0/TestsTechniques.AssemblyInfoInputs.cache
+/Users/gwenaellebussac/Apprentissage/ADA/entrainements/module_2/apprendre_c#/TestsTechniques/obj/Debug/net10.0/TestsTechniques.AssemblyInfo.cs
+/Users/gwenaellebussac/Apprentissage/ADA/entrainements/module_2/apprendre_c#/TestsTechniques/obj/Debug/net10.0/TestsTechniques.csproj.CoreCompileInputs.cache
